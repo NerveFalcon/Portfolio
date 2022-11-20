@@ -23,7 +23,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\NerveFalcon.Portfolio.Data\NerveFalcon.Portfolio.Data.csproj" />
+	  <ProjectReference Include="..\..\src\NerveFalcon.Portfolio.Data\NerveFalcon.Portfolio.Data.csproj" />
 	</ItemGroup>
-
 </Project>

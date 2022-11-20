@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerveFalcon.Portfolio.Data", "NerveFalcon.Portfolio.Data\NerveFalcon.Portfolio.Data.csproj", "{FA70A02D-4181-4D68-87F4-1E964BDD4A3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerveFalcon.Portfolio.Data", "src\NerveFalcon.Portfolio.Data\NerveFalcon.Portfolio.Data.csproj", "{FA70A02D-4181-4D68-87F4-1E964BDD4A3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{27E6ABD0-5A56-483A-A66A-CB650AE6C7F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{FACC5C8A-ADD4-4AA4-91F1-596CFF01FCFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerveFalcon.Portfolio.Data.Tests", "NerveFalcon.Portfolio.Data.Tests\NerveFalcon.Portfolio.Data.Tests.csproj", "{7C658C4C-47AF-41C7-9184-44401D960731}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerveFalcon.Portfolio.Data.Tests", "Tests\NerveFalcon.Portfolio.Data.Tests\NerveFalcon.Portfolio.Data.Tests.csproj", "{7C658C4C-47AF-41C7-9184-44401D960731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
