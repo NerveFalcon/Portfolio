@@ -1,4 +1,6 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Core.Data;
 using Portfolio.UI.Server;
@@ -11,9 +13,14 @@ var connectionString = builder.Configuration.GetConnectionString( "DefaultConnec
 builder.Services.AddDbContext<ApplicationDbContext>( options => options.UseSqlite( connectionString ) );
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+builder.Services.AddIdentity<User, IdentityRole<Guid>>( config => { config.Password.RequireNonAlphanumeric = false; } )
+	   .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<User>>();
+builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
 var app = builder.Build();
 

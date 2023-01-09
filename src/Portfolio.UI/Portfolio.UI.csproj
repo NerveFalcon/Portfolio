@@ -15,4 +15,8 @@
 		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.12" />
 	</ItemGroup>
 	
+	<ItemGroup>
+	  <ProjectReference Include="..\Portfolio.Core.Data\Portfolio.Core.Data.csproj" />
+	</ItemGroup>
+	
 </Project>
