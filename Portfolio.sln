@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.UI", "src\Portfolio.UI\Portfolio.UI.csproj", "{0235EBD6-C7B2-4A06-9D76-84C12F3810EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portfolio.Core", "Portfolio.Core", "{DD2FD177-9A47-4FFC-A2BA-9750613DC8C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Core.Data", "src\Portfolio.Core.Data\Portfolio.Core.Data.csproj", "{15DF851B-94BE-44D0-9A6D-2CBC7C9F8126}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,12 @@ Global
 		{0235EBD6-C7B2-4A06-9D76-84C12F3810EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0235EBD6-C7B2-4A06-9D76-84C12F3810EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0235EBD6-C7B2-4A06-9D76-84C12F3810EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15DF851B-94BE-44D0-9A6D-2CBC7C9F8126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15DF851B-94BE-44D0-9A6D-2CBC7C9F8126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15DF851B-94BE-44D0-9A6D-2CBC7C9F8126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15DF851B-94BE-44D0-9A6D-2CBC7C9F8126}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15DF851B-94BE-44D0-9A6D-2CBC7C9F8126} = {DD2FD177-9A47-4FFC-A2BA-9750613DC8C9}
 	EndGlobalSection
 EndGlobal
