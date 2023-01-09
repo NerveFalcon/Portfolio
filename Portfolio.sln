@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.UI", "src\Portfolio.UI\Portfolio.UI.csproj", "{0235EBD6-C7B2-4A06-9D76-84C12F3810EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.UI.Server", "src\Portfolio.UI.Server\Portfolio.UI.Server.csproj", "{0235EBD6-C7B2-4A06-9D76-84C12F3810EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portfolio.Core", "Portfolio.Core", "{DD2FD177-9A47-4FFC-A2BA-9750613DC8C9}"
 EndProject
