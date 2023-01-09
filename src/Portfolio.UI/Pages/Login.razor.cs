@@ -10,7 +10,7 @@ namespace Portfolio.UI.Pages;
 
 public partial class Login : ComponentBase
 {
-	public Login() => ViewModel = new();
+	public Login() => ViewModel = new LoginViewModel();
 
 	[ Inject ]
 	private UserManager<User> UserManager { get; set; }
@@ -34,11 +34,6 @@ public partial class Login : ComponentBase
 		if( !checkPassword ) return;
 
 		await UserManager.AddClaimsAsync( user, new Claim[] { new(ClaimTypes.Name, user.UserName), } );
-		var logins = await UserManager.GetLoginsAsync( user );
-		foreach ( var loginInfo in logins )
-		{
-			await UserManager.RemoveLoginAsync( user, loginInfo.LoginProvider, loginInfo.ProviderKey );
-		}
 
 		var login  = new UserLogin( "provider", UserManager.GenerateNewAuthenticatorKey(), "display" );
 		var result = await UserManager.AddLoginAsync( user, login );
@@ -48,6 +43,11 @@ public partial class Login : ComponentBase
 			await StorageService.SetAsync( UserLogin.DictionaryKey, login );
 			NavigationManager.NavigateTo( "/", true );
 		}
+
+		// var logins = await UserManager.GetLoginsAsync( user );
+		//
+		// foreach ( var loginInfo in logins.Where( x => x.ProviderKey != login.ProviderKey ) )
+		// 	await UserManager.RemoveLoginAsync( user, loginInfo.LoginProvider, loginInfo.ProviderKey );
 	}
 }
 

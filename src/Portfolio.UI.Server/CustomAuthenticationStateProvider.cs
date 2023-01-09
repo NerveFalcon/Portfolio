@@ -13,8 +13,8 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
 		StorageService = storageService;
 	}
 
-	private UserManager<User>    UserManager    { get; set; }
-	private ILocalStorageService StorageService { get; set; }
+	private UserManager<User>    UserManager    { get; }
+	private ILocalStorageService StorageService { get; }
 
 	public override async Task<AuthenticationState> GetAuthenticationStateAsync()
 	{
@@ -25,16 +25,26 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
 		var user = await UserManager.FindByLoginAsync( login.LoginProvider, login.ProviderKey );
 
 		if( user is null ) return Anonymus();
+
+		return await Authorized( user, login );
+	}
+
+	private async Task<AuthenticationState> Authorized( User user, UserLoginInfo login )
+	{
 		var claims          = await UserManager.GetClaimsAsync( user );
 		var claimsPrincipal = new ClaimsPrincipal( new ClaimsIdentity( claims, login.ProviderDisplayName ) );
 
-		return new AuthenticationState( claimsPrincipal );
+		var authenticationState = new AuthenticationState( claimsPrincipal );
+
+		return authenticationState;
 	}
 
 	private AuthenticationState Anonymus()
 	{
 		var claimsPrincipal = new ClaimsPrincipal( new ClaimsIdentity() );
 
-		return new AuthenticationState( claimsPrincipal );
+		var authenticationState = new AuthenticationState( claimsPrincipal );
+
+		return authenticationState;
 	}
 }
