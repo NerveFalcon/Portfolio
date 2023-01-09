@@ -1,9 +1,6 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
+using Portfolio.Core.Data;
 using Portfolio.UI.Areas.Identity;
 using Portfolio.UI.Data;
 
@@ -14,12 +11,15 @@ var connectionString = builder.Configuration.GetConnectionString( "DefaultConnec
 builder.Services.AddDbContext<ApplicationDbContext>( options => options.UseSqlite( connectionString ) );
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>( options => options.SignIn.RequireConfirmedAccount = true )
+builder.Services.AddDefaultIdentity<User>( options =>
+		{
+			options.Password.RequireNonAlphanumeric = false;
+		} )
 	   .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
+builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<User>>();
 builder.Services.AddSingleton<WeatherForecastService>();
 
 var app = builder.Build();
