@@ -15,7 +15,6 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.12" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.12" />
-		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.12" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.12" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.12" />
 	</ItemGroup>
@@ -28,6 +27,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Portfolio.Core.Data\Portfolio.Core.Data.csproj" />
+	  <ProjectReference Include="..\Portfolio.UI\Portfolio.UI.csproj" />
 	</ItemGroup>
 
 </Project>
