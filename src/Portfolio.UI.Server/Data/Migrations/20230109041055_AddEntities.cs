@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Portfolio.UI.Data.Migrations
+namespace Portfolio.UI.Server.Data.Migrations
 {
     public partial class AddEntities : Migration
     {

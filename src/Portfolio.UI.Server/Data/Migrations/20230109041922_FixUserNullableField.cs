@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Portfolio.UI.Data.Migrations
+namespace Portfolio.UI.Server.Data.Migrations
 {
     public partial class FixUserNullableField : Migration
     {

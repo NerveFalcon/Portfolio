@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Core.Data;
-using Portfolio.UI.Areas.Identity;
-using Portfolio.UI.Data;
+using Portfolio.UI.Server;
+using Portfolio.UI.Server.Data;
 
 var builder = WebApplication.CreateBuilder( args );
 

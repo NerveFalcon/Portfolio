@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Portfolio.UI.Data;
+using Portfolio.UI.Server.Data;
 
 #nullable disable
 
-namespace Portfolio.UI.Data.Migrations
+namespace Portfolio.UI.Server.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230109041055_AddEntities")]
