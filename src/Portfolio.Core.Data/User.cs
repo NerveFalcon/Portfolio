@@ -11,17 +11,17 @@ public class User : IdentityUser<Guid>
 	/// Имя
 	/// </summary>
 	[ ProtectedPersonalData ]
-	public string FirstName { get; set; }
+	public string? FirstName { get; set; }
 
 	/// <summary>
 	/// Отчество
 	/// </summary>
 	[ ProtectedPersonalData ]
-	public string MiddleName { get; set; }
+	public string? MiddleName { get; set; }
 
 	/// <summary>
 	/// Фамилия
 	/// </summary>
 	[ ProtectedPersonalData ]
-	public string LastName { get; set; }
+	public string? LastName { get; set; }
 }
