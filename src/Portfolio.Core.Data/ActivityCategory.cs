@@ -3,7 +3,7 @@
 /// <summary>
 /// Вид деятельности
 /// </summary>
-public class ActivityCategory
+public class ActivityCategory : DbEntity
 {
 	/// <summary>
 	/// Название вида деятельности
