@@ -43,3 +43,26 @@ app.MapBlazorHub();
 app.MapFallbackToPage( "/_Host" );
 
 app.Run();
+
+async Task Init( IHost app )
+{
+	using var scope = app.Services.CreateScope();
+
+	var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+
+	var user = new User
+	{
+		UserName   = "NerveFalcon",
+		FirstName  = "Олег",
+		LastName   = "Сураев",
+		MiddleName = "Николаевич",
+	};
+
+	var res = await userManager.CreateAsync( user, "Passw0rd" );
+
+	if( res.Succeeded )
+		await userManager.AddClaimAsync( user, new Claim( ClaimTypes.Role, "Student" ) );
+	else
+		throw new Exception( "Ошибка добавления пользователя" );
+	//*/
+}
