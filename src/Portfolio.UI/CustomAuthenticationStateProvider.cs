@@ -5,6 +5,8 @@ using Portfolio.Core.Data;
 using Portfolio.UI.Pages;
 using Portfolio.UI.Server;
 
+namespace Portfolio.UI;
+
 public class CustomAuthenticationStateProvider : AuthenticationStateProvider
 {
 	public CustomAuthenticationStateProvider( UserManager<User> userManager, ILocalStorageService storageService )

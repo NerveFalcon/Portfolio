@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Core.Data;
+using Portfolio.UI;
 using Portfolio.UI.Server;
 using Portfolio.UI.Server.Data;
 
@@ -10,17 +11,12 @@ var builder = WebApplication.CreateBuilder( args );
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString( "DefaultConnection" );
-builder.Services.AddDbContext<ApplicationDbContext>( options => options.UseSqlite( connectionString ) );
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
-builder.Services.AddIdentity<User, IdentityRole<Guid>>( config => { config.Password.RequireNonAlphanumeric = false; } )
-	   .AddEntityFrameworkStores<ApplicationDbContext>();
-
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddScoped<ILocalStorageService, LocalStorageService>();
-builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+
+builder.Services.AddPortfolio( options => options.UseSqlite( connectionString ) );
 
 var app = builder.Build();
 
@@ -39,8 +35,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// app.UseAuthentication();
-// app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 app.MapBlazorHub();
